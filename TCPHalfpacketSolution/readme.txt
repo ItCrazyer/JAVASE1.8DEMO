@@ -1,0 +1,5 @@
+TCP粘包以及半包处理器，提供客户端和服务端进行测试。
+服务端和客户端均采用java NIO编写
+java io的半包处理比较简单，因为每个io一个线程，在各自线程里定义变量即可
+而NIO则不是，所以实现的时候对每一个SocketChannel对应的SelectionKey添加一个TempData类附件
+用于保存每一个连接的变量
